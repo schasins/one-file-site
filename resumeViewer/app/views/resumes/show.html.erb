@@ -1,0 +1,29 @@
+</p>
+
+
+<p>
+
+  <b>Resume Name:</b>
+
+  <%= @resume.resumeName %>
+</p>
+
+
+
+<table>
+<% @resume.resume_items.each do |resumeItem| %>
+  <tr>
+     <td>
+       <%= resumeItem.contents %>
+     </td>
+     <td>
+       
+<%= link_to 'Edit', edit_user_resume_resumeItem_path(@user, @resume, resumeItem) %>
+     </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Add a New Resume Item', new_user_resume_resume_item_path(@user,@resume) %>
+<br><br>
+<%= link_to 'Back to Resume List', user_path(@user) %>
